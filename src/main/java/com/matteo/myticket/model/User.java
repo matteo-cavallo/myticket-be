@@ -43,6 +43,10 @@ public class User implements UserDetails  {
     private List<Order> order;
 
 
+    public Authority getRole(){
+        return this.authorities.get(0);
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities.stream().map(a -> new SimpleGrantedAuthority(a.name())).collect(Collectors.toList());

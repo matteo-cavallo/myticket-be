@@ -21,31 +21,6 @@ import java.util.Arrays;
 @SpringBootApplication
 public class MyticketApplication {
 
-    @Autowired
-    UserService userService;
-
-    @Autowired
-    BusinessService businessService;
-
-    @Autowired
-    BusinessRepo businessRepo;
-
-    @Autowired
-    UserRepo userRepo;
-
-    @Autowired
-    ManagerService managerService;
-
-    @Autowired
-    OrderRepo orderRepo;
-
-    @PostConstruct
-    @Transactional
-    public void onInit(){
-
-
-
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(MyticketApplication.class, args);

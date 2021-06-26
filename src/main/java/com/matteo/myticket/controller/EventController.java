@@ -31,6 +31,7 @@ public class EventController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Event> getEventById(@PathVariable Integer id){
-        return ResponseEntity.ok(eventService.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found" + id)));
+        return ResponseEntity.ok(eventService.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Not Found Event with id: " + id)));
     }
 }
