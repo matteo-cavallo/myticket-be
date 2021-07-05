@@ -34,4 +34,10 @@ public class EventController {
         return ResponseEntity.ok(eventService.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Not Found Event with id: " + id)));
     }
+
+    @GetMapping("/name/{name}")
+    public ResponseEntity<List<Event>> searchEvents(@PathVariable String name){
+        System.out.println("Searching " + name);
+        return ResponseEntity.ok(eventService.searchByTitle(name));
+    }
 }

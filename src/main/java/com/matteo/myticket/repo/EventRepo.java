@@ -14,4 +14,6 @@ public interface EventRepo extends JpaRepository<Event, Integer> {
 
     List<Event> findTop5ByOrderByDateAsc();
 
+    List<Event> findByTitleContainsIgnoreCase(String title);
+
 }

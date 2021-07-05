@@ -52,4 +52,8 @@ public class EventService implements CRUDService<Event> {
         dto.setDescription(business.getDescription());
         return dto;
     }
+
+    public List<Event> searchByTitle(String title){
+        return eventRepo.findByTitleContainsIgnoreCase(title);
+    }
 }
